@@ -1,15 +1,32 @@
-import ButtonsPage from "../../utils/buttons"
+import { ButtonsPage } from "../../utils/buttons"
+import { useState, useEffect } from 'react'
 
 function HeaderIndex() {
+    const [wdt, setWtd] = useState(70);
+    useEffect(() => {
+        const ResposiveImg = () => {
+            if (window.innerWidth < 501) {
+                setWtd(61);
+            } else {
+                setWtd(70);
+            }
+        }
+
+        window.addEventListener('resize', ResposiveImg);
+
+        return () => {
+            window.removeEventListener('resize', ResposiveImg);
+        }
+            
+    }, []);
+
     return (
         <header className="bg-gray-700 p-[13.5px] w-[100%] flex justify-between items-center">
-            <img src="/public/velox-studios.png" width="70"/>
-            <h1 className="text-center text-white text-xl max-[501px]:text-[18.5px]">VX Studios</h1>
-            <div id="pages-buttons" className="flex flex-row flex-nowrap">
-                {ButtonsPage(0)}
-            </div>
+            <img src="/velox-studios.png" width={wdt} />
+            <h1 className="text-center text-white text-xl max-[501px]:hidden">VX Studios</h1>
+            {ButtonsPage(0)}
         </header>
     )
 }
 
-export default HeaderIndex
+export default HeaderIndex;
