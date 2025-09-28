@@ -13,7 +13,8 @@ import 'swiper/css/scrollbar';
 export function PageIndex() {
     const imgsData = [
         { id: '1', src: "https://i.postimg.cc/G241qPRm/sprites.png" },
-        { id: '2', src: "https://i.postimg.cc/HWttBqSj/spriter-game-1.png" }
+        { id: '2', src: "https://i.postimg.cc/HWttBqSj/spriter-game-1.png" },
+        { id: '3', src: "https://i.postimg.cc/9QFfP6m6/esboco-artes.png" }
     ];
 
     const [wdtImg, setWdtImg] = useState(82);
@@ -60,19 +61,19 @@ export function PageIndex() {
                 </div>
                 <div id="desc-slider-items" className="mt-4">
                         <h1 className="text-center text-white font-outfit text-2xl bg-gray-800 w-[300px] m-auto p-1 border-top-right border-top-left">Descontrário</h1>
-                        <p className="text-white text-lg max-[500px]:text-base bg-gray-800 p-3 rounded-md m-auto w-[600px] max-[501px]:w-[350px]">
+                        <p className="text-white text-lg max-[500px]:text-base bg-gray-800 p-3 rounded-md m-auto w-[600px] max-[501px]:w-[350px] font-ubuntu">
                             Se algum dia as duas espadas forem completas, por duas pessoas e essas duas pessoas se encontrarem, as duas <strong>Auras</strong> serão libertas.
                         </p>
                 </div>
                 <div id="gamemaker-div" className="w-[100%] mt-3">
                     <h2 className="text-center font-mono text-2xl max-[501px]:text-xl text-white">Em desenvolvimento...</h2>
                     <img src={Images[Images.length - Images.length]} alt="GameMaker - Logo" width={wdtImg} className="block m-auto" />
-                    <p className="text-center text-lg text-white">
+                    <p className="text-center text-lg text-white font-ubuntu">
                         Caso queira contribuir acesse o nosso server do <strong className="text-[#5865F2]">Discord</strong>!
                     </p>
                     {CreatorBtn(
                         'Discord',
-                        'bg-[#5865F2] text-white m-auto block mt-4 p-2 w-[125px] rounded-lg duration-300 hover:bg-[#525ee3] hover:cursor-pointer',
+                        'bg-[#5865F2] text-white font-sans m-auto block mt-4 p-2 w-[125px] rounded-lg duration-300 hover:bg-[#525ee3] hover:cursor-pointer',
                         HandleLinkBtn(DCPath)
                     )}
                 </div>

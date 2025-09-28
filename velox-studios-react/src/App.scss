@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Domine:wght@400..700&display=swap&family=Alan+Sans:wght@300..900&display=swap');
 
-.font-outfit {
-  font-family: "Outfit", monospace, sans-serif;
+$fonts: ('outfit': "Outfit", 'ubuntu': "Ubuntu", 'domine': "Domine", 'alan': "Alan Sans");
+
+@each $name, $font in $fonts {
+  .font-#{$name} {
+    font-family: $font;
+  }
 }
 
 $bd-value: 8px;
-$borders: ('top-left': $bd-value, 'top-right': $bd-value);
+$borders: ('top-left', 'top-right');
 
-@each $names, $value in $borders {
+@each $names in $borders {
     .border-#{$names} {
-        border-#{$names}-radius: $value;
+        border-#{$names}-radius: $bd-value;
     }
 }
