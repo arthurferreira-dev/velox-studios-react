@@ -34,7 +34,7 @@ export function ButtonsPage(pageName: number) {
         }
     }, []);
 
-    const Pagesname: string[] = ['Jogos', 'Lore', 'Suporte', 'Músicas', 'KC Bot', 'Home']; //! Buttons Names
+    const Pagesname: string[] = ['Jogos', 'Suporte', 'Músicas', 'KC Bot', 'Home']; //! Buttons Names
     const Pagespath: string[] = ['/jogos.html'];
     
     const buttonsCL: string = "bg-slate-600 p-2 rounded-md text-lg max-[500px]:text-base text-white hover:cursor-pointer hover:bg-slate-500 duration-300"
