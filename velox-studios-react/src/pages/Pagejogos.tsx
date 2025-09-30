@@ -3,7 +3,7 @@ import HeaderJogos from "../components/jogos/header";
 import { CreatorBtn, HandleLinkBtn } from '../utils/buttons';
 
 export default function PageJogos() {
-    const Images: string[] = ['https://i.postimg.cc/T3Mn0YLM/descontrario-contamination.png', 'https://i.postimg.cc/nrjzmBnC/aurasr.png', 'https://i.postimg.cc/7ZftFY9V/auras-vx.png'];
+    const Images: string[] = ['/descontrario-contamination.png', '/aurasr.png', '/auras-vx.png'];
     const [wdtImg, setWdtImg] = useState(235);
     const [TwdtImg, setTwdtImg] = useState(276);
     useEffect(() => {

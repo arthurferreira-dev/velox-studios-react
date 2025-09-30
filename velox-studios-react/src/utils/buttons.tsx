@@ -35,7 +35,7 @@ export function ButtonsPage(pageName: number) {
     }, []);
 
     const Pagesname: string[] = ['Jogos', 'Suporte', 'Músicas', 'KC Bot', 'Home']; //! Buttons Names
-    const Pagespath: string[] = ['/jogos.html'];
+    const Pagespath: string[] = ['/jogos.html', '/suporte.html', '', '', '/index.html'];
     
     const buttonsCL: string = "bg-slate-600 p-2 rounded-md text-lg max-[500px]:text-base text-white hover:cursor-pointer hover:bg-slate-500 duration-300"
     const iconsCL: string = click ? "ri-close-large-line hidden text-white bg-slate-600 w-[50px] text-center p-3 rounded-[100%] max-[501px]:block hover:cursor-pointer hover:bg-slate-500 duration-300 mb-4" : "ri-menu-line hidden text-white bg-slate-600 w-[50px] text-center p-3 rounded-[100%] max-[762px]:block hover:cursor-pointer hover:bg-slate-500 duration-300";
@@ -47,6 +47,7 @@ export function ButtonsPage(pageName: number) {
     
     if (pageName === 0) {
         Pagesname.splice(Pagesname.length - 1, 1);
+        Pagespath.splice(Pagespath.length - 1, 1);
         return (
             <div className={divDirection}>
                 <i className={iconsCL} onClick={toggleMenu}/>
@@ -61,12 +62,28 @@ export function ButtonsPage(pageName: number) {
         );
     } else if (pageName === 1) {
         Pagesname.splice(Pagesname.length - Pagesname.length, 1);
+        Pagespath.splice(Pagespath.length - Pagespath.length, 1);
         return (
             <div className={divDirection}>
                 <i className={iconsCL} onClick={toggleMenu}/>
                 <div id="pages-buttons" className={window.innerWidth < 501 ? divBtnsMobile : "flex flex-nowrap gap-4"}>
                     {Pagesname.map((name, index) => (
-                        <button key={index} className={buttonsCL}>
+                        <button key={index} className={buttonsCL} onClick={HandleLinkBtn(Pagespath[index])}>
+                            {name}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        );
+    } else if (pageName === 2) {
+        Pagesname.splice(Pagesname.length - 4, 1);
+        Pagespath.splice(Pagespath.length - 4, 1);
+        return (
+            <div className={divDirection}>
+                <i className={iconsCL} onClick={toggleMenu}/>
+                <div id="pages-buttons" className={window.innerWidth < 501 ? divBtnsMobile : "flex flex-nowrap gap-4"}>
+                    {Pagesname.map((name, index) => (
+                        <button key={index} className={buttonsCL} onClick={HandleLinkBtn(Pagespath[index])}>
                             {name}
                         </button>
                     ))}

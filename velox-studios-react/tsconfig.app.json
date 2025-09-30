@@ -23,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "Pagesons.tsx", "sons.tsx"]
+  "include": ["src", "src/Pagesons.tsx", "src/sons.tsx"]
 }
