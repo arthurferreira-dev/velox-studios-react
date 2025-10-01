@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { PageIndex } from './Pageindex'
+import { PageIndex } from './pages/Pageindex'
 import './tailwind.css'
 import './App.css'
 

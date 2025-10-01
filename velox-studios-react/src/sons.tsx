@@ -93,6 +93,9 @@ export default function MainSons() {
 
     return (
         <main className='w-[100%]'>
+            <h1 className='text-center text-white text-xl mt-4 mb-4 font-ubuntu'>
+                Despertar do Dragão
+            </h1>
             <img src="/restaurado-vx.png" alt="Restaurado VX" className="block m-auto mt-4 mb-4 rounded-[100%]" width={wdtImg} />
             <audio id='audio-vx' src={Sounds.at(0)} />
             <div className='flex justify-center items-center gap-4 mt-4 mb-4'>
@@ -107,7 +110,9 @@ export default function MainSons() {
                 Um som ecua dentro do reinado das Sombras, aonde esse som não e Visto como Algo Normal, não reconhecido como algo <span className='font-mono'>familiar..</span> mais sim conhecido como uma lenda nas eras <span className='font-mono'>antigas..</span> Mais antigas do que a era da criação, um som que poucos irão <span className='font-mono'>Reconhecer..</span>
             </p>
             <br />
-            <h1 className='text-center text-white text-xl font-ubuntu'>Chamada dos Guardiões</h1>
+            <h1 className='text-center text-white text-xl mb-4 font-ubuntu'>
+                Chamada dos Guardiões
+            </h1>
             <audio id='guardians-audio-vx'>
                 <source src={Sounds.at(1)} type="audio/wav" />
                 <source src={Sounds.at(2)} type="audio/mp3" />

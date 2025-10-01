@@ -9,7 +9,7 @@ $fonts: ('outfit': "Outfit", 'ubuntu': "Ubuntu", 'domine': "Domine", 'alan': "Al
 }
 
 $bd-value: 8px;
-$borders: ('top-left', 'top-right');
+$borders: ('top-left', 'top-right', 'bottom-left', 'bottom-right');
 
 @each $names in $borders {
     .border-#{$names} {

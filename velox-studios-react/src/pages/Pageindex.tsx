@@ -1,5 +1,5 @@
-import HeaderIndex from "./components/index/header";
-import { CreatorBtn, HandleLinkBtn } from './utils/buttons';
+import HeaderIndex from '../components/index/header';
+import { CreatorBtn, HandleLinkBtn } from '../utils/buttons';
 import { useState, useEffect } from 'react'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'

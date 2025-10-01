@@ -21,4 +21,12 @@
 
 .border-top-right {
   border-top-right-radius: 8px;
+}
+
+.border-bottom-left {
+  border-bottom-left-radius: 8px;
+}
+
+.border-bottom-right {
+  border-bottom-right-radius: 8px;
 }/*# sourceMappingURL=App.css.map */
