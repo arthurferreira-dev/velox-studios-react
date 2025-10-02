@@ -9,11 +9,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
-        jogos: "public/jogos.html",
-        kcbot: "public/kcbot.html",
-        news: "public/novidades.html",
-        sons: "public/sons.html",
-        suporte: "public/suporte.html",
+        jogos: "jogos.html",
+        kcbot: "kcbot.html",
+        news: "novidades.html",
+        sons: "sons.html",
+        suporte: "suporte.html",
       },
     },
   },
