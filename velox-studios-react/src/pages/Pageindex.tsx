@@ -5,9 +5,13 @@ import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 register();
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/pagination';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/navigation';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/scrollbar';
 
 export function PageIndex() {
