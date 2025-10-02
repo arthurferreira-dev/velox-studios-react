@@ -14,9 +14,9 @@ import 'swiper/css/scrollbar';
 
 export function NewsSlash(notices: number) {
     const Images: string [] = [
-        "/backgroundVX-black.png",
-        "/backgroundVX-white.png",
-        "/kc-bot.png"
+        "/assets/backgroundVX-black.png",
+        "/assets/backgroundVX-white.png",
+        "/assets/kc-bot.png"
     ];
     const Banners: {id: number; src: string; alt: string;}[] = [
         { id: 1, src: Images[0], alt:"backgroundVX-black" },

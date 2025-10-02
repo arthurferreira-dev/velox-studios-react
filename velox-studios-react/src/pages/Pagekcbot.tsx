@@ -3,7 +3,7 @@ import { CreatorBtn, HandleLinkBtn } from '../utils/buttons';
 
 export default function PageKC() {
     const Images: string[] = [
-        "/kc-bot-lg.png"
+        "/assets/kc-bot-lg.png"
     ];
     const Alt: string[] = [
         "KC BOT Logo 2025"

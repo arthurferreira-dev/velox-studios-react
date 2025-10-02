@@ -19,10 +19,11 @@ function HeaderIndex() {
         }
             
     }, []);
+    const img: { src: string } = { src:"/assets/velox-studios.png" }
 
     return (
         <header className="bg-gray-700 p-[13.5px] w-[100%] flex justify-between items-center">
-            <img src="/velox-studios.png" width={wdt} />
+            <img src={img.src} width={wdt} />
             <h1 className="text-center text-white text-xl max-[501px]:hidden">VX Studios</h1>
             {ButtonsPage(0)}
         </header>

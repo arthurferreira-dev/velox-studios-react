@@ -16,9 +16,9 @@ import 'swiper/css/scrollbar';
 
 export function PageIndex() {
     const imgsData = [
-        { id: '1', src: "/sprites.png" },
-        { id: '2', src: "/sprites-game.png" },
-        { id: '3', src: "/esboco-artes.png" }
+        { id: '1', src: "/assets/sprites.png" },
+        { id: '2', src: "/assets/sprites-game.png" },
+        { id: '3', src: "/assets/esboco-artes.png" }
     ];
 
     const [wdtImg, setWdtImg] = useState(82);
@@ -37,7 +37,7 @@ export function PageIndex() {
         return () => window.removeEventListener('resize', ImageRezise);
     }, []);
 
-    const Images: string[] = ['/gamemaker.png'];
+    const Images: string[] = ['/assets/gamemaker.png'];
     const DCPath: string = 'https://discord.gg/6aYzCZPdew'
 
     return (

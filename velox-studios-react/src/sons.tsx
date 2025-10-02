@@ -89,14 +89,15 @@ export default function MainSons() {
         return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     };
 
-    const Sounds: string[] = ['/OficialVx.m4a', '/guardiansVX.wav', '/guardiansVX.mp3'];
+    const Sounds: string[] = ['/assets/OficialVx.m4a', '/assets/guardiansVX.wav', '/assets/guardiansVX.mp3'];
+    const Images: string[] = ['/assets/restaurado-vx.png'];
 
     return (
         <main className='w-[100%]'>
             <h1 className='text-center text-white text-xl mt-4 mb-4 font-ubuntu'>
                 Despertar do Dragão
             </h1>
-            <img src="/restaurado-vx.png" alt="Restaurado VX" className="block m-auto mt-4 mb-4 rounded-[100%]" width={wdtImg} />
+            <img src={Images[Images.length - Images.length]} alt="Restaurado VX" className="block m-auto mt-4 mb-4 rounded-[100%]" width={wdtImg} />
             <audio id='audio-vx' src={Sounds.at(0)} />
             <div className='flex justify-center items-center gap-4 mt-4 mb-4'>
                 <i className={iconCL} onClick={toogleAudio} />
@@ -125,7 +126,7 @@ export default function MainSons() {
                     </p>
                 )}
             </div>
-            {CreatorBtn('Voltar', 'block m-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/jogos.html'))}
+            {CreatorBtn('Voltar', 'block m-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/public/jogos.html'))}
         </main>
     );
 
