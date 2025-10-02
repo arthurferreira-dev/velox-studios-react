@@ -3,9 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { CreatorBtn, HandleLinkBtn } from '../../utils/buttons';
 import { register } from 'swiper/element/bundle'
 register();
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/pagination';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/navigation';
+// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
 import 'swiper/css/scrollbar';
 
 export function NewsSlash(notices: number) {
