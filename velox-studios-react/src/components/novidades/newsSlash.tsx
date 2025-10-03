@@ -16,7 +16,8 @@ export function NewsSlash(notices: number) {
     const Images: string [] = [
         "/assets/backgroundVX-black.png",
         "/assets/backgroundVX-white.png",
-        "/assets/kc-bot.png"
+        "/assets/kc-bot.png",
+        "/assets/new-person-descontrario.png"
     ];
     const Banners: {id: number; src: string; alt: string;}[] = [
         { id: 1, src: Images[0], alt:"backgroundVX-black" },
@@ -84,7 +85,18 @@ export function NewsSlash(notices: number) {
         );
     }
 
-    const NEWS = [NewsBanners, KCBOT];
+    const Person1 = () => {
+        return (
+            <div id='News-Person1'>
+                <h1 className={titleCL}>
+                    {`${TAGS[0]} Nova personagem`}
+                </h1>
+                <img src={Images[3]} alt="News-Person1" className='block m-auto mb-3 rounded-lg' width="278" />
+            </div>
+        );
+    }
+
+    const NEWS = [NewsBanners, KCBOT, Person1];
     NEWS.splice(NEWS.length - notices, 1);
 
     const Home: string = '/index.html'
