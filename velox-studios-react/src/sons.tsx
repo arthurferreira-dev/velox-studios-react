@@ -131,7 +131,7 @@ export default function MainSons() {
                     </ParaghapeSounds>
                 )}
             </div>
-            {CreatorBtn('Voltar', 'block mx-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/public/jogos.html'))}
+            {CreatorBtn('Voltar', 'block mx-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/jogos.html'))}
         </main>
     );
 
