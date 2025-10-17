@@ -1,12 +1,14 @@
 import { createRoot } from 'react-dom/client';
-import HeaderSuporte from '../components/suporte/header';
+import { Headers } from '../components/header';
 import MainSuporte from '../suporte';
 import '../tailwind.css'
 import '../App.css'
 
 createRoot(document.querySelector('body')!).render(
     <>
-        <HeaderSuporte/>
+        <Headers pageName={2}>
+            <h1 className="text-center text-white text-xl">Suporte</h1>
+        </Headers>
         <MainSuporte/>
     </>
 );

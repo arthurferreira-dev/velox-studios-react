@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CreatorBtn, HandleLinkBtn } from './utils/buttons';
+import type { Props } from './utils/Props';
 
 export default function MainSons() {
     const [wdtImg, setWdtImg] = useState<number>(300);
@@ -92,22 +93,26 @@ export default function MainSons() {
     const Sounds: string[] = ['/assets/OficialVx.m4a', '/assets/guardiansVX.wav', '/assets/guardiansVX.mp3'];
     const Images: string[] = ['/assets/restaurado-vx.png'];
 
+    const ParaghapeSounds = (props: Props) => {
+        return <p className='text-center text-white font-robot-mono bg-black p-3 rounded-full w-[150px] text-nowrap'>{props.children}</p>
+    }
+
     return (
         <main className='w-[100%]'>
-            <h1 className='text-center text-white text-xl mt-4 mb-4 font-ubuntu'>
+            <h1 className='text-center text-white text-xl my-4 font-ubuntu'>
                 Despertar do Dragão
             </h1>
-            <img src={Images[Images.length - Images.length]} alt="Restaurado VX" className="block m-auto mt-4 mb-4 rounded-[100%]" width={wdtImg} />
-            <audio id='audio-vx' src={Sounds.at(0)} />
-            <div className='flex justify-center items-center gap-4 mt-4 mb-4'>
+            <img src={Images[Images.length - Images.length]} alt="Restaurado VX" className="block mx-auto my-5 rounded-[100%]" width={wdtImg} />
+            <audio id='audio-vx' src={Sounds[Sounds.length - Sounds.length]} />
+            <div className='flex justify-center items-center gap-4 my-4'>
                 <i className={iconCL} onClick={toogleAudio} />
                 {duration !== null && (
-                    <p className='text-center text-white'>
+                    <ParaghapeSounds>
                         {formatTime(currentTime)} / {formatTime(duration)}
-                    </p>
+                    </ParaghapeSounds>
                 )}
             </div>
-            <p className='m-auto w-[65%] text-white font-alan'>
+            <p className='mx-auto w-[65%] text-white font-alan'>
                 Um som ecua dentro do reinado das Sombras, aonde esse som não e Visto como Algo Normal, não reconhecido como algo <span className='font-mono'>familiar..</span> mais sim conhecido como uma lenda nas eras <span className='font-mono'>antigas..</span> Mais antigas do que a era da criação, um som que poucos irão <span className='font-mono'>Reconhecer..</span>
             </p>
             <br />
@@ -115,18 +120,18 @@ export default function MainSons() {
                 Chamada dos Guardiões
             </h1>
             <audio id='guardians-audio-vx'>
-                <source src={Sounds.at(1)} type="audio/wav" />
-                <source src={Sounds.at(2)} type="audio/mp3" />
+                <source src={Sounds[Sounds.length - Sounds.length + 1]} type="audio/wav" />
+                <source src={Sounds[Sounds.length - Sounds.length + 2]} type="audio/mp3" />
             </audio>
-            <div className='flex justify-center items-center gap-4 mt-4 mb-4'>
+            <div className='flex justify-center items-center gap-4 my-4'>
                 <i className={iconCL2} onClick={toogleAudio2} />
                 {duration2 !== null && (
-                    <p className='text-center text-white'>
+                    <ParaghapeSounds>
                         {formatTime(currentTime2)} / {formatTime(duration2)}
-                    </p>
+                    </ParaghapeSounds>
                 )}
             </div>
-            {CreatorBtn('Voltar', 'block m-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/public/jogos.html'))}
+            {CreatorBtn('Voltar', 'block mx-auto w-[135px] mt-5 bg-violet-600 p-3 text-white rounded-lg duration-300 hover:bg-violet-700 hover:cursor-pointer', HandleLinkBtn('/public/jogos.html'))}
         </main>
     );
 
