@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CreatorBtn, HandleLinkBtn } from './utils/buttons';
+import { CreatorBtn, HandleLinkBtn } from './utils/Functions';
 import type { Props } from './utils/Props';
 
 export default function MainSons() {
