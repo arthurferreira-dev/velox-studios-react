@@ -8,11 +8,11 @@ export const Pagesname: string[] = [
   "Home",
 ]; //! Buttons Names
 export const Pagespath: string[] = [
-  "https://velox-studios.vercel.app/jogos.html",
-  "https://velox-studios.vercel.app/suporte.html",
-  "https://velox-studios.vercel.app/novidades.html",
-  "https://velox-studios.vercel.app/kcbot.html",
-  "https://velox-studios.vercel.app",
+  "/jogos",
+  "/suporte",
+  "/novidades",
+  "/kcbot",
+  "/",
 ]; //! Pages Names
 
 export const buttonsCL: string =

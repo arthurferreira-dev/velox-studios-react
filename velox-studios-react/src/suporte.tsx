@@ -1,4 +1,5 @@
 import { CreatorBtn, HandleLinkBtn } from "./utils/Functions";
+import 'animate.css';
 
 export default function MainSuporte() {
   const VX_EMAIL: string = "veloxstudios99@gmail.com";
