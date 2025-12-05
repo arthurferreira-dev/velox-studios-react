@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="painel">
+            <h1 class="titulo">📝 Painel de Cadastro</h1>
+            <p class="subtitulo">Preencha os campos abaixo</p>
+
+            <form id="formulario" class="formulario">
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input 
+                        type="text" 
+                        id="titulo" 
+                        name="titulo" 
+                        placeholder="Digite o título"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem">Selecionar Imagem</label>
+                    <input 
+                        type="file" 
+                        id="imagem" 
+                        name="imagem" 
+                        accept="image/*"
+                        required
+                    >
+                    <span class="file-label">Nenhuma imagem selecionada</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tag">Tag</label>
+                    <input 
+                        type="text" 
+                        id="tag" 
+                        name="tag" 
+                        placeholder="Digite a tag"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-enviar">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
