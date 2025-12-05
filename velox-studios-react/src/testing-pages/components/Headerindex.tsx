@@ -1,60 +1,59 @@
 import { useState, useEffect } from "react";
-import { buttonsCL, iconCL, NamesBtn, PathBtn } from "../../utils/Variables";
-import { HandleLinkBtn } from "../../utils/Functions";
-import { Menu, X } from "lucide-react";
+import { buttonsCL, iconCL, Pagesname, Pagespath } from "../../utils/Variables";
+import { VerifyIcon } from "../../utils/Functions";
+import { LuMenu, LuX } from "react-icons/lu";
 import { useClickStore } from "../../store/useClickStore";
 import { DivBtnsMobile } from "../../components/divBtnsMobile";
-import VX_Logo from '/assets/velox-studios.png';
+import { useMainPath } from "../../store/useMainStore";
 
 function HeaderIndex() {
-  const [wdtImg, setWtdImg] = useState(70);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const { click, setClick } = useClickStore();
+  const { setPath } = useMainPath();
 
   useEffect(() => {
-    const ResposiveImg = () => {
+    const Resposive = () => {
       setScreenWidth(window.innerWidth);
-      setWtdImg(window.innerWidth < 501 ? 61 : 70);
     };
 
-    window.addEventListener("resize", ResposiveImg);
+    window.addEventListener("resize", Resposive);
 
     return () => {
-      window.removeEventListener("resize", ResposiveImg);
+      window.removeEventListener("resize", Resposive);
     };
   }, []);
 
-  const names = NamesBtn(4);
-  const path = PathBtn(4);
+  const names = Pagesname;
+  const path = Pagespath;
 
   return (
-    <>
-      <header className="bg-gray-700 p-[13.5px] w-[100%] sticky top-0 z-50 shadow-md flex justify-between items-center">
-        <a href="/">
-          <img src={VX_Logo} width={wdtImg} />
-        </a>
+    <header className="sticky w-[100%] top-0 z-50 shadow-md">
+      <div
+        className="bg-slate-700 flex items-center justify-between p-3.5 flex-row min-[700px]:flex-col min-[980px]:flex-row"
+      >
+        <h1 className="font-poppins text-xl font-medium">Velox Studios</h1>
         <div
-          className={screenWidth < 501 ? iconCL : "hidden"}
+          className={screenWidth < 700 ? iconCL : "hidden"}
           onClick={() => setClick()}
         >
-          {click ? <X size={22} /> : <Menu size={22} />}
+          {click ? <LuX size={22} /> : <LuMenu size={22} />}
         </div>
-        <div className={screenWidth < 501 ? "hidden" : "flex gap-4"}>
+        <div className={screenWidth < 820 ? "hidden" : "flex gap-4"}>
           {names.map((name, index) => (
             <button
               key={index}
               className={buttonsCL}
-              onClick={HandleLinkBtn(path[index])}
+              onClick={() => setPath(path[index])}
             >
-              {name}
+              {VerifyIcon(name)} {name}
             </button>
           ))}
         </div>
-      </header>
-      {screenWidth < 501 && (
+      </div>
+      {screenWidth < 700 && (
         <DivBtnsMobile NamesBtn={names} PathBtn={path} click={click} />
       )}
-    </>
+    </header>
   );
 }
 

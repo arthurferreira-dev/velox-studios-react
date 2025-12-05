@@ -1,22 +1,22 @@
 export const screenWidth: number = window.innerWidth;
 
 export const Pagesname: string[] = [
+  "Descontrário",
   "Jogos",
   "Suporte",
   "Novidades",
   "KC Bot",
-  "Home",
 ]; //! Buttons Names
 export const Pagespath: string[] = [
+  "/",
   "/jogos",
   "/suporte",
   "/novidades",
   "/kcbot",
-  "/",
 ]; //! Pages Names
 
 export const buttonsCL: string =
-  "bg-slate-600 p-2 rounded-md text-lg max-[500px]:text-base text-white hover:cursor-pointer hover:bg-slate-500 duration-300";
+  "p-2 w-[150px] flex justify-center items-center gap-3 rounded-md text-[1.2rem] max-[500px]:text-base text-white duration-300 hover:-translate-y-1 hover:cursor-pointer hover:bg-slate-500/40 btn-ghost text-center";
 
 export const iconCL: string =
   "text-white bg-slate-600 text-center p-3 rounded-[100%] max-[501px]:block hover:cursor-pointer hover:bg-slate-500 duration-300";
