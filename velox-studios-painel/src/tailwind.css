@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: none;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen flex justify-center items-center p-5;
+  }
+}
+
+@layer components {
+  .bg-gradient-custom {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+}
