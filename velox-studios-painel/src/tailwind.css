@@ -3,6 +3,8 @@
   themes: none;
 }
 
+/* CSS de peixão developer */
+
 @layer base {
   body {
     @apply min-h-screen flex justify-center items-center p-5;
@@ -12,5 +14,147 @@
 @layer components {
   .bg-gradient-custom {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+
+  .dashboard {
+    background: hsla(0, 0%, 100%, 0.05);
+    border-color: hsla(0, 0%, 100%, 0.1);
+    border-radius: 20px;
+    animation: slideIn 0.5s ease-out;
+    @apply backdrop-blur-sm border border-solid p-10;
+  }
+
+  .title {
+    font-size: 30px;
+    @apply text-white mb-2.5 text-center font-bold;
+  }
+
+  .subtitle {
+    color: hsla(0, 0%, 100%, 0.7);
+    margin-bottom: 30px;
+    @apply text-sm text-center;
+  }
+
+  .form {
+    @apply flex flex-col gap-5;
+  }
+
+  .form-group {
+    @apply flex flex-col gap-2 relative;
+  }
+
+  .form-group label {
+    color: hsla(0, 0%, 100%, 0.9);
+    letter-spacing: 0.5px;
+    @apply text-sm font-semibold uppercase;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="file"],
+  .form-group input[type="password"] {
+    padding: 12px 16px;
+    border: 2px solid hsla(0, 0%, 100%, 0.2);
+    background: hsla(0, 0%, 100%, 0.08);
+    transition: all 0.3s ease;
+    outline: none;
+    @apply text-sm text-white rounded-xl;
+  }
+
+  .form-group input[type="text"]::placeholder {
+    color: hsla(0, 0%, 100%, 0.4);
+  }
+
+  .form-group input[type="text"]:focus,
+  .form-group input[type="file"]:focus,
+  .form-group input[type="password"]:focus {
+    border-color: hsl(271, 91%, 65%);
+    background: hsla(0, 0%, 100%, 0.12);
+    box-shadow: 0 0 15px hsla(271, 91%, 65%, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .form-group input[type="file"] {
+    padding: 10px 16px;
+    @apply cursor-pointer;
+  }
+
+  .form-group input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    @apply mr-2.5 font-semibold cursor-pointer rounded-lg border-none border-0 text-white;
+  }
+
+  .form-group input[type="file"]::file-selector-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px hsla(271, 91%, 65%, 0.4);
+  }
+
+  .file-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    @apply -mt-1;
+  }
+
+  .btn-send {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px hsla(271, 91%, 65%, 0.3);
+    @apply border-none border-0 cursor-pointer text-white font-bold uppercase mt-2.5 text-base rounded-xl;
+  }
+
+  .btn-send:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(168, 85, 247, 0.5);
+  }
+
+  .btn-send:active {
+    transform: translateY(-1px);
+  }
+
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .dashboard {
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"] {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .btn-send {
+      padding: 12px 24px;
+      @apply text-sm;
+    }
+
+    .result {
+      padding: 15px;
+      @apply mt-5;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

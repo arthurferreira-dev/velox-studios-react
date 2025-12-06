@@ -43,4 +43,25 @@
 <p><strong>VX Studios</strong></p>
 </div>
 
-<h1 align="center">OBRIGADO POR TUDO! &#x1F601;</h1>
+<h2 align="center">Veja os contribuidores desse projeto</h2>
+<div align="center">
+
+[``contributing.md``](CONTRIBUTING.md)
+
+</div>
+
+<h2 align="center">Código de Conduta</h2>
+<div align="center">
+
+[``code_of_conduct.md``](CODE_OF_CONDUCT.md)
+
+</div>
+
+<h2 align="center">License</h2>
+<div align="center">
+
+[``AGPL 3.0``](LICENSE)
+
+</div>
+
+<h1 align="center">OBRIGADO VX STUDIOS! &#x1F601;</h1>

@@ -1,11 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import './tailwind.css'; //? TailwindCSS + DaisyUI
-import './App.scss';
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/router";
+import "./tailwind.css"; //? TailwindCSS + DaisyUI
+import "./App.scss";
 
 createRoot(document.querySelector("body")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
