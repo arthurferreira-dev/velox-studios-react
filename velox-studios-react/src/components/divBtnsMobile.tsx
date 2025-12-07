@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { HandleLinkBtn, VerifyIcon } from "../utils/Functions";
+import { VerifyIcon } from "../utils/Functions";
+import { useMainPath } from "../store/useMainStore";
 
 interface BtnsMobile {
   click: boolean;
@@ -9,6 +10,7 @@ interface BtnsMobile {
 
 export const DivBtnsMobile = ({ NamesBtn, PathBtn, click }: BtnsMobile) => {
   const [oppendMenu, setOppendMenu] = useState(false);
+  const { setPath } = useMainPath();
 
   useEffect(() => {
     setOppendMenu(true);
@@ -31,7 +33,7 @@ export const DivBtnsMobile = ({ NamesBtn, PathBtn, click }: BtnsMobile) => {
         <button
           key={index}
           className="p-2.5 w-full flex justify-center items-center gap-3 rounded-md text-[1.2rem] max-[500px]:text-base text-white duration-200 hover:bg-slate-500/40"
-          onClick={() => HandleLinkBtn(PathBtn[index])}
+          onClick={() => setPath(PathBtn[index])}
         >
           {VerifyIcon(name)} {name}
         </button>

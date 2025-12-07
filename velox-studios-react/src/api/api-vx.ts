@@ -1,3 +1,6 @@
+import { v4 } from "uuid";
+import type { ApiListImgs } from "../utils/Props";
+
 export const API_VX: string = "https://vx-api.onrender.com";
 
 export const API = {
@@ -9,3 +12,18 @@ export const API = {
   logos: `${API_VX}/imgs/logos`,
   persons: `${API_VX}/imgs/persons`,
 };
+
+export const imgsDataArts: ApiListImgs[] = [
+  { id: v4(), src: `${API.arts}/sprites-1` },
+  { id: v4(), src: `${API.arts}/sprites-2` },
+  { id: v4(), src: `${API.arts}/esboco-artes` },
+];
+
+export const imgsDataDescontrario: ApiListImgs[] = [
+  { id: v4(), src: `${API.descontrario}/logo-vx` },
+];
+
+export const imgsDataAuras: ApiListImgs[] = [
+  { id: v4(), src: `${API.auras}/1` },
+  { id: v4(), src: `${API.auras}/2` },
+];

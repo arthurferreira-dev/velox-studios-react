@@ -1,2 +1,22 @@
 $alan_sans: "Alan Sans", ui-sans-serif, sans-serif;
 $poppins: "Poppins", Arial, Helvetica, ui-sans-serif, sans-serif;
+
+@mixin CreateFonts($file, $extension, $name, $paste) {
+  @if ($extension == "ttf") {
+    @font-face {
+      font-family: $name;
+      src: url("#{$paste}/fonts/#{$file}.#{$extension}") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+  } @else if ($extension == "otf") {
+    @font-face {
+      font-family: $name;
+      src: url("#{$paste}/fonts/#{$file}.#{$extension}") format("opentype");
+      font-weight: normal;
+      font-style: normal;
+    }
+  } @else {
+    @error "Unsupported font extension: #{$extension}. Supported extensions are '.ttf' and '.otf'";
+  }
+}

@@ -1,12 +1,69 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@layer {
+@layer components {
   .pulse-fast {
     animation: pulse 1.3s infinite !important;
   }
 
   .pulse-fast:hover {
     animation-play-state: paused !important;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out !important;
+  }
+
+  .footer-copyright {
+    @apply bg-slate-700 text-white p-3 mt-4 text-center flex justify-center items-center gap-2;
+  }
+
+  .btn-discord {
+    @apply text-white text-lg mx-auto flex justify-center items-center gap-3 mt-4 py-3 p-2 h-full rounded-lg duration-300 hover:cursor-pointer;
+  }
+
+  .text-discord {
+    color: #5865F2;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flexCol {
+    @apply flex flex-col;
+  }
+
+  .media-card {
+    @media screen and (min-width: 881px) {
+      @apply w-200;
+    }
+
+    @media screen and (min-width: 700px) and (max-width: 880px) {
+      @apply w-150;
+    }
+
+    @media screen and (max-width: 699px) {
+      @apply w-100;
+    }
+  }
+
+  .button {
+    @apply p-2 rounded-lg flex justify-center items-center;
+  }
+
+  .button-see {
+    @apply bg-lime-500 text-white hover:bg-lime-600 duration-300;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

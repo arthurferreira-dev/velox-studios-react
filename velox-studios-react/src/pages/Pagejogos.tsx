@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Headers } from "../components/header";
-import { CreatorBtn, HandleLinkBtn } from "../utils/Functions";
+import { HandleLinkBtn } from "../utils/Functions";
 import { NamesBtn, PathBtn } from "../utils/Variables";
 import { FooterCopyRight } from "../components/FooterCopyRight";
 

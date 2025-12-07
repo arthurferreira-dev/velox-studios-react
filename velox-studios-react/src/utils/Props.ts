@@ -1,5 +1,10 @@
-import React from "react"
+import React from "react";
 
 export interface Props {
-    children: React.ReactNode
+  children: React.ReactNode;
+}
+
+export interface ApiListImgs {
+  id: string;
+  src: string;
 }
