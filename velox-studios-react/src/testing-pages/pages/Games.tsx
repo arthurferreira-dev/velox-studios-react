@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HeaderIndex from "../components/Headerindex";
 import { CardBodyGames, CardGames } from "../components/Card";
-import { MainNoGrow } from "../components/Container";
+import { MainGrow } from "../components/Container";
 import { imgsDataDescontrario, imgsDataAuras } from "../../api/api-vx";
 import { FooterCopyRight } from "../../components/FooterCopyRight";
 
@@ -24,7 +24,7 @@ export const Games = () => {
   return (
     <>
       <HeaderIndex />
-      <MainNoGrow>
+      <MainGrow>
         <div className="w-full flex-center flex-col gap-5">
           <CardGames>
             <CardBodyGames>
@@ -64,7 +64,7 @@ export const Games = () => {
             </CardBodyGames>
           </CardGames>
         </div>
-      </MainNoGrow>
+      </MainGrow>
       <FooterCopyRight />
     </>
   );

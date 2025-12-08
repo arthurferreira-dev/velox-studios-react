@@ -2,7 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Domine:wght@400..700&display=swap&family=Alan+Sans:wght@300..900&display=swap&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@include font.CreateFonts("ggsans-Semibold", "ttf", "GG Sans", './sass/');
+@include font.CreateFonts("ggsans-Semibold", "ttf", "GG Sans", "./sass/");
 
 $fonts: (
   "outfit": "Outfit",
@@ -19,7 +19,6 @@ $fonts: (
     font-family: $font;
   }
 }
-
 
 $bd-value: 8px;
 $borders: ("top-left", "top-right", "bottom-left", "bottom-right");
@@ -59,9 +58,95 @@ $delays: (
 }
 
 .btn-discord-bg {
-  background-color: #5865F2;
+  background-color: #5865f2;
   width: 190px;
   &:hover {
     background-color: #525ee3;
+  }
+}
+
+.btn-sup-question {
+  background: linear-gradient(
+    135deg,
+    oklch(56% 0.26 282),
+    oklch(48% 0.23 290) 45%,
+    oklch(42% 0.21 298)
+  );
+
+  &:hover {
+    background: linear-gradient(
+      145deg,
+      oklch(60% 0.28 280),
+      oklch(50% 0.25 292) 45%,
+      oklch(44% 0.22 300)
+    );
+    transform: translateY(-2px) scale(1.015);
+    box-shadow: 0 10px 35px oklch(50% 0.25 290 / 0.35);
+    cursor: pointer;
+  }
+}
+
+.btn-sup-bug {
+  background: linear-gradient(
+    135deg,
+    oklch(62% 0.24 25),
+    oklch(54% 0.26 20) 45%,
+    oklch(46% 0.22 18)
+  );
+  transition: background 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(
+      145deg,
+      oklch(66% 0.26 25),
+      oklch(56% 0.28 22) 45%,
+      oklch(48% 0.24 18)
+    );
+    transform: translateY(-2px) scale(1.015);
+    box-shadow: 0 10px 35px oklch(50% 0.25 20 / 0.35);
+    cursor: pointer;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out !important;
+}
+
+.text-discord {
+  color: #5865f2;
+}
+
+.glass-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-radius: 20px;
+  padding: 2.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 30px 60px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+    transition: all 0.4s ease;
   }
 }

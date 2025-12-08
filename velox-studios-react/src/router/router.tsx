@@ -8,10 +8,10 @@ interface routings {
 }
 
 const routing: routings[] = [
-    {
-        path: '/',
-        element: <PageIndex />
-    }
+  {
+    path: "/",
+    element: <PageIndex />,
+  },
 ];
 
 export const router = createBrowserRouter(routing);

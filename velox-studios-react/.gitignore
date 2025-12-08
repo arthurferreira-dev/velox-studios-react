@@ -25,3 +25,6 @@ dist-ssr
 
 # Sass Configs
 *css.map
+
+# Enviroment Variables
+*.env

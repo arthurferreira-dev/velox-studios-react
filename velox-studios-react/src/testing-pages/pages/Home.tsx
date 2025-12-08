@@ -18,7 +18,7 @@ import { HandleLinkBtn } from "../../utils/Functions";
 import { API } from "../../api/api-vx";
 import { imgsDataArts } from "../../api/api-vx";
 import { SiDiscord } from "react-icons/si";
-import { MainNoGrow } from "../components/Container";
+import { MainGrow } from "../components/Container";
 
 export const Home = () => {
   const [wdtImg, setWdtImg] = useState(82);
@@ -42,7 +42,7 @@ export const Home = () => {
   return (
     <>
       <HeaderIndex />
-      <MainNoGrow>
+      <MainGrow>
         <div className="mx-auto block">
           <Swiper slidesPerView={1} pagination={{ clickable: true }} navigation>
             {imgsDataArts.map((item) => {
@@ -95,7 +95,7 @@ export const Home = () => {
             </button>
           </div>
         </div>
-      </MainNoGrow>
+      </MainGrow>
       <FooterCopyRight />
     </>
   );

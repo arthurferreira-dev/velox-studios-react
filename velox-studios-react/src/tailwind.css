@@ -1,6 +1,71 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@layer base {
+  body {
+    background: radial-gradient(
+        at top left,
+        rgba(120, 160, 255, 0.12),
+        transparent 55%
+      ),
+      radial-gradient(
+        at bottom right,
+        rgba(120, 80, 255, 0.08),
+        transparent 60%
+      ),
+      linear-gradient(180deg, #2f3f55 0%, #3b4c63 45%, #43566f 100%);
+  }
+
+  #supForm {
+    @apply flex flex-col justify-center items-center gap-2.5;
+  }
+
+  #supForm > input,
+  #supForm > textarea {
+    @apply w-full p-4 text-white text-base;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.08)
+    );
+    border-radius: 14px;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    transition: background 0.35s ease, border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  #supForm > input:hover,
+  #supForm > textarea:hover {
+    border-color: rgba(255, 255, 255, 0.32);
+  }
+
+  #supForm > input:focus,
+  #supForm > textarea:focus {
+    outline: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.28),
+      rgba(255, 255, 255, 0.12)
+    );
+    border-color: rgba(130, 170, 255, 0.65);
+    box-shadow: 0 0 0 2px rgba(130, 170, 255, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  #supForm > input::placeholder,
+  #supForm > textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.01em;
+  }
+
+  #supForm > textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
 @layer components {
   .pulse-fast {
     animation: pulse 1.3s infinite !important;
@@ -10,20 +75,12 @@
     animation-play-state: paused !important;
   }
 
-  .animate-slide-in {
-    animation: slideIn 0.5s ease-out !important;
-  }
-
   .footer-copyright {
     @apply bg-slate-700 text-white p-3 mt-4 text-center flex justify-center items-center gap-2;
   }
 
   .btn-discord {
     @apply text-white text-lg mx-auto flex justify-center items-center gap-3 mt-4 py-3 p-2 h-full rounded-lg duration-300 hover:cursor-pointer;
-  }
-
-  .text-discord {
-    color: #5865F2;
   }
 
   .flex-center {
@@ -49,21 +106,29 @@
   }
 
   .button {
-    @apply p-2 rounded-lg flex justify-center items-center;
+    padding: 15px 35px;
+    @apply inline-flex justify-center items-center;
   }
 
   .button-see {
-    @apply bg-lime-500 text-white hover:bg-lime-600 duration-300;
+    @apply bg-green-500 text-white hover:bg-green-600 duration-300;
   }
-}
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
+  .btn-cancel {
+    @apply duration-300;
+    background-color: #2a2f3a;
+    color: #e5e7eb;
+    border: 1px solid #3a4050;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .btn-cancel:hover {
+    background-color: #2e3345;
+  }
+
+  .btn-support {
+    @apply gap-3 duration-300 font-semibold rounded-full;
+  }
+
+  div#support-btns {
+    @apply flex justify-center items-center flex-col gap-6.5;
   }
 }

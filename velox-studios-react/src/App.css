@@ -78,9 +78,64 @@
 }
 
 .btn-discord-bg {
-  background-color: #5865F2;
+  background-color: #5865f2;
   width: 190px;
 }
 .btn-discord-bg:hover {
   background-color: #525ee3;
+}
+
+.btn-sup-question {
+  background: linear-gradient(135deg, oklch(56% 0.26 282deg), oklch(48% 0.23 290deg) 45%, oklch(42% 0.21 298deg));
+}
+.btn-sup-question:hover {
+  background: linear-gradient(145deg, oklch(60% 0.28 280deg), oklch(50% 0.25 292deg) 45%, oklch(44% 0.22 300deg));
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 10px 35px oklch(50% 0.25 290deg / 0.35);
+  cursor: pointer;
+}
+
+.btn-sup-bug {
+  background: linear-gradient(135deg, oklch(62% 0.24 25deg), oklch(54% 0.26 20deg) 45%, oklch(46% 0.22 18deg));
+  transition: background 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-sup-bug:hover {
+  background: linear-gradient(145deg, oklch(66% 0.26 25deg), oklch(56% 0.28 22deg) 45%, oklch(48% 0.24 18deg));
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 10px 35px oklch(50% 0.25 20deg / 0.35);
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out !important;
+}
+
+.text-discord {
+  color: #5865f2;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 30px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  transition: all 0.4s ease;
 }/*# sourceMappingURL=App.css.map */
