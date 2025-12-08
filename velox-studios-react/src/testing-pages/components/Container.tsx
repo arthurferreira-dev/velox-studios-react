@@ -5,5 +5,5 @@ export const Container = ({ children }: Props) => {
 };
 
 export const MainGrow = ({ children }: Props) => {
-  return <main className="w-full mx-auto grow">{children}</main>;
+  return <main className="w-full mx-auto grow flex-center flex-col">{children}</main>;
 };

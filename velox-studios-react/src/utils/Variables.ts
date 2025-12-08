@@ -32,4 +32,4 @@ export const PathBtn = (removeIndex: number): string[] => {
   return Pagespath.filter((_, i) => i !== removeIndex);
 };
 
-export const VX_EMAIL = import.meta.env.VITE_VX_EMAIL;
+export const VX_EMAIL: string = import.meta.env.VITE_VX_EMAIL;

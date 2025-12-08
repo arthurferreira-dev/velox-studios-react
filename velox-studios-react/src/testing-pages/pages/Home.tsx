@@ -1,24 +1,14 @@
 import { useState, useEffect } from "react";
 import HeaderIndex from "../components/Headerindex";
-import { register } from "swiper/element/bundle";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-register();
-
-// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
-import "swiper/css";
-// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
-import "swiper/css/pagination";
-// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
-import "swiper/css/navigation";
-// @ts-expect-error: Swiper CSS modules don't have TypeScript definitions
-import "swiper/css/scrollbar";
 import { FooterCopyRight } from "../../components/FooterCopyRight";
 import { HandleLinkBtn } from "../../utils/Functions";
 import { API } from "../../api/api-vx";
 import { imgsDataArts } from "../../api/api-vx";
 import { SiDiscord } from "react-icons/si";
 import { MainGrow } from "../components/Container";
+import { SlickSlider } from "../components/SlickSlider";
+// @ts-expect-error "bruh"
+import { Settings } from "slick-carousel";
 
 export const Home = () => {
   const [wdtImg, setWdtImg] = useState(82);
@@ -39,24 +29,21 @@ export const Home = () => {
 
   const DCPath: string = "https://discord.gg/6aYzCZPdew";
 
+  const settings: Settings = {
+    dots: true,
+    loop: true,
+  }
+
   return (
     <>
       <HeaderIndex />
       <MainGrow>
-        <div className="mx-auto block">
-          <Swiper slidesPerView={1} pagination={{ clickable: true }} navigation>
-            {imgsDataArts.map((item) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <img
-                    src={item.src}
-                    alt="Item do Slider"
-                    className="w-[100%] h-[360px] object-cover"
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+        <div className="w-full block">
+          <div className="w-full max-w-[800px] mx-auto">
+            <SlickSlider list={imgsDataArts} settings={settings}>
+
+            </SlickSlider>
+          </div>
         </div>
         <div id="desc-slider-items" className="mt-4 animate-slide-in delay-1">
           <h1 className="text-center text-white font-outfit text-2xl bg-gray-800 w-[300px] m-auto p-1 border-top-right border-top-left">

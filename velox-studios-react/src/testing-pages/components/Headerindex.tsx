@@ -29,16 +29,16 @@ function HeaderIndex() {
   return (
     <header className="sticky w-[100%] top-0 z-50 shadow-md">
       <div
-        className="bg-slate-700 flex items-center justify-between p-3.5 flex-row min-[700px]:flex-col min-[980px]:flex-row"
+        className="bg-slate-700 flex items-center justify-between p-3.5 flex-row min-[800px]:flex-col min-[980px]:flex-row"
       >
         <h1 className="font-poppins text-xl font-medium">Velox Studios</h1>
         <div
-          className={screenWidth < 700 ? iconCL : "hidden"}
+          className={screenWidth < 800 ? iconCL : "hidden"}
           onClick={() => setClick()}
         >
           {click ? <LuX size={22} /> : <LuMenu size={22} />}
         </div>
-        <div className={screenWidth < 820 ? "hidden" : "flex gap-4"}>
+        <div className={screenWidth < 800 ? "hidden" : "flex gap-4"}>
           {names.map((name, index) => (
             <button
               key={index}
@@ -50,7 +50,7 @@ function HeaderIndex() {
           ))}
         </div>
       </div>
-      {screenWidth < 700 && (
+      {screenWidth < 800 && (
         <DivBtnsMobile NamesBtn={names} PathBtn={path} click={click} />
       )}
     </header>

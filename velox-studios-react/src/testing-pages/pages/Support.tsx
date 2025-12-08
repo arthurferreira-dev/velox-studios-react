@@ -4,6 +4,8 @@ import { MainGrow } from "../components/Container";
 import { FooterCopyRight } from "../../components/FooterCopyRight";
 import type { Props } from "../../utils/Props";
 import { MessageSquare, Bug } from "lucide-react";
+import { useNavigator } from "../hooks/useNavigator";
+import { VX_EMAIL } from "../../utils/Variables";
 
 export const Support = () => {
   const [showForm, setShowForm] = useState<boolean>(false);
@@ -13,6 +15,7 @@ export const Support = () => {
   const [textAreaMsg, setTextAreaMsg] = useState<string>("");
   const formRef = useRef<HTMLFormElement | null>(null);
   const divFormRef = useRef<HTMLDivElement | null>(null);
+  const navigateTo = useNavigator().navigateTo;
 
   useEffect(() => {
     if (showForm && divFormRef.current) {
@@ -34,10 +37,20 @@ export const Support = () => {
 
   const onSubmitForm = () => {
     if (!inputEmail && !textAreaMsg) {
-        alert('Porfavor preencha o formulário do email e da mensagem!');
-        formRef.current?.clear();
+      alert("Porfavor preencha o formulário do email e da mensagem!");
+      formRef.current?.clear();
     }
-  }
+
+    navigateTo(
+      `mailto:${VX_EMAIL}?subject=${encodeURIComponent(
+        formTitle
+      )}&body=Nome:%20${encodeURIComponent(
+        inputName ? inputName : "Anônimo"
+      )}%0AEmail:%20${encodeURIComponent(
+        inputEmail
+      )}%0AMensagem:%20${encodeURIComponent(textAreaMsg)}`
+    );
+  };
 
   return (
     <>
@@ -85,7 +98,12 @@ export const Support = () => {
             <h1 className="text-center mb-4 text-2xl font-semibold">
               {formTitle}
             </h1>
-            <form id="supForm" autoComplete="on" ref={formRef}>
+            <form
+              id="supForm"
+              autoComplete="on"
+              ref={formRef}
+              onSubmit={onSubmitForm}
+            >
               <input
                 type="text"
                 placeholder="Digite seu nome..."
